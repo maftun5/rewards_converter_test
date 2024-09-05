@@ -1,0 +1,11 @@
+from serviceable import Serviceable
+
+class Car(Serviceable):
+    def __init__(self, engine, battery, tires):
+        self.engine = engine
+        self.battery = battery
+        self.tires = tires  # Add tires attribute
+
+    def needs_service(self):
+        # Check if the car needs service based on the engine, battery, or tires
+        return self.engine.needs_service() or self.battery.needs_service() or self.tires.needs_service()
